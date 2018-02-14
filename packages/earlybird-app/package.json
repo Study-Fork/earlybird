@@ -1,0 +1,34 @@
+{
+  "name": "earlybird-app",
+  "version": "0.1.0",
+  "private": true,
+  "description": "The early bird changes the world",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -rf eslint build .cache checkstyle*.xml",
+    "lint": "eslint . --ignore-path .eslintignore -f html -o eslint/index.html",
+    "checkstyle": "eslint . --ignore-path .eslintignore -f checkstyle > checkstyle-result.xml || exit 0",
+    "lint:report": "yarn clean; yarn lint; yarn checkstyle",
+    "build:css": "node-sass-chokidar src/App.scss -o src/",
+    "build:js": "react-scripts build",
+    "build": "npm-run-all build:*",
+    "watch:css": "npm run build:css && node-sass-chokidar src/App.scss -o src/ --watch",
+    "start": "react-scripts start",
+    "start:watch": "npm-run-all -p watch:css start:js",
+    "test": "jest",
+    "coverage": "yarn test -- --no-cache --runInBand --coverage",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 9001 -c .storybook"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
+  },
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "repository": "https://github.com/stunstunstun/earlybird",
+  "author": "stunstunstun",
+  "license": "MIT"
+}

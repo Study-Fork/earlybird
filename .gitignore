@@ -1,0 +1,23 @@
+# etc
+.DS_Store
+
+# dependencies
+node_modules/
+
+# logs
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# test
+coverage/
+.cache
+
+# build
+eslint/
+build/
+checkstyle-result.xml
+
+# IntelliJ IDEA generated files
+.idea/
+mint.iml

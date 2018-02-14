@@ -1,0 +1,38 @@
+{
+  "name": "earlybird",
+  "private": true,
+  "description": "The early bird changes the world",
+  "scripts": {
+    "clean": "lerna exec yarn clean",
+    "lint": "lerna exec yarn lint",
+    "lint:report": "lerna exec yarn lint:report",
+    "build": "lerna exec yarn build --scope earlybird-app",
+    "test": "jest",
+    "coverage": "yarn test --no-cache --runInBand --coverage",
+    "start": "lerna exec yarn start --scope earlybird-app",
+    "storybook": "lerna exec yarn storybook --scope earlybird-app",
+    "publish": "scripts/publish.sh"
+  },
+  "devDependencies": {
+    "@storybook/addon-centered": "^3.3.13",
+    "@storybook/react": "^3.3.13",
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
+    "lerna": "^2.8.0",
+    "node-sass-chokidar": "^0.0.3",
+    "npm-run-all": "^4.1.2",
+    "react-scripts": "^1.1.1"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=8.9.0"
+  },
+  "repository": "https://github.com/stunstunstun/earlybird",
+  "license": "MIT"
+}
