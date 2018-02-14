@@ -3,14 +3,15 @@
   "private": true,
   "description": "The early bird changes the world",
   "scripts": {
-    "clean": "lerna exec yarn clean",
-    "lint": "lerna exec yarn lint",
-    "lint:report": "lerna exec yarn lint:report",
-    "build": "lerna exec yarn build --scope earlybird-app",
+    "clean": "lerna run yarn clean",
+    "lint": "lerna run yarn lint",
+    "lint:report": "lerna run yarn lint:report",
+    "build": "lerna run yarn build --scope earlybird-app",
     "test": "jest",
     "coverage": "yarn test --no-cache --runInBand --coverage",
-    "start": "lerna exec yarn start --scope earlybird-app",
-    "storybook": "lerna exec yarn storybook --scope earlybird-app",
+    "storybook": "lerna run yarn storybook --scope earlybird-app",
+    "start": "lerna run yarn start --scope earlybird-app",
+    "serve": "lerna run yarn serve --scope earlybird-app",
     "publish": "scripts/publish.sh"
   },
   "devDependencies": {

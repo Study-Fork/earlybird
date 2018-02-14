@@ -18,7 +18,8 @@
     "test": "jest",
     "coverage": "yarn test -- --no-cache --runInBand --coverage",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "serve": "serve -s build"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
