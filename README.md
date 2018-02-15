@@ -1,6 +1,6 @@
 # earlybird
 
-- http://earlybird.sh
+- http://earlybird.live
 
 ## Getting Started
 
