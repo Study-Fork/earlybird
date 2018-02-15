@@ -1,5 +1,5 @@
 {
-  "name": "earlybird-domain",
+  "name": "earlybird-integration",
   "version": "0.1.0",
   "main": "index.js",
   "scripts": {
