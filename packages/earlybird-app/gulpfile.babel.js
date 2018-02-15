@@ -8,5 +8,5 @@ gulp.task('sass', () =>
 
 gulp.task('default', ['sass'], () => {
   gulp.watch('./src/_styles/*.scss', ['sass'])
-  gulp.watch('./src/*.scss', ['sass'])
+  gulp.watch('./src/**/*.scss', ['sass'])
 })

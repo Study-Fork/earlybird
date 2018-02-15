@@ -7,7 +7,7 @@ import './App.scss'
 class App extends Component {
   render() {
     return (
-      <div className="wrap">
+      <div className="container">
         <Header />
         <Main />
         <Footer />
