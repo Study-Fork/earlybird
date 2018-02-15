@@ -1,8 +1,13 @@
 @charset "utf-8";
 
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600');
+
 @import '_styles/base';
 @import '_styles/mixins';
 
 @import 'containers/Header/Header';
 @import 'containers/Main/Main';
 @import 'containers/Footer/Footer';
+
+@import '_styles/mq'
