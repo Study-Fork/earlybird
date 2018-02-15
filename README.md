@@ -47,12 +47,7 @@ $ yarn
 
 ```bash
 $ yarn lint
-```
-
-### Build
-
-```bash
-$ yarn build
+$ yarn lint:report # Generate reports
 ```
 
 ### Test
@@ -71,6 +66,23 @@ $ yarn start
 
 ```
 $ yarn storybook
+```
+
+## Build for Production
+
+```bash
+$ yarn build
+yarn run v1.3.2
+$ lerna exec yarn build --scope earlybird-app
+lerna info version 2.8.0
+lerna info scope earlybird-app
+$ npm-run-all clean build:*
+$ rm -rf eslint build .cache checkstyle*.xml
+$ node-sass-chokidar src/App.scss -o src
+Rendering Complete, saving .css file...
+Wrote CSS to /Users/jungminhyuck/Github/earlybird/packages/earlybird-app/src/App.css
+$ react-scripts build
+Creating an optimized production build...
 ```
 
 ## Integration with CI
