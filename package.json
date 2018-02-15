@@ -9,8 +9,8 @@
     "build": "lerna exec yarn build --scope earlybird-app",
     "test": "jest",
     "coverage": "yarn test --no-cache --runInBand --coverage",
-    "start": "lerna exec yarn start --scope earlybird-app",
-    "storybook": "lerna exec yarn storybook --scope earlybird-app",
+    "storybook": "lerna exec --scope earlybird-app yarn storybook",
+    "start": "lerna exec --scope earlybird-app yarn start",
     "publish": "scripts/publish.sh"
   },
   "devDependencies": {

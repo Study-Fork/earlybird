@@ -11,7 +11,7 @@
     "lint:report": "yarn clean; yarn lint; yarn checkstyle",
     "build:css": "node-sass-chokidar src/App.scss -o src/",
     "build:js": "react-scripts build",
-    "build": "npm-run-all build:*",
+    "build": "npm-run-all clean build:*",
     "watch:css": "npm run build:css && node-sass-chokidar src/App.scss -o src/ --watch",
     "start": "react-scripts start",
     "start:watch": "npm-run-all -p watch:css start:js",

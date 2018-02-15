@@ -1,0 +1,16 @@
+body {
+  background-color: #e8e8e8; }
+
+.App-Header {
+  height: 45px;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  background-color: #2d3539; }
+
+.App-Footer {
+  text-align: center;
+  padding-top: 30px; }
+
+.App-Main {
+  padding-top: 45px; }
