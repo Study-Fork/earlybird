@@ -10,8 +10,7 @@
     "test": "jest",
     "coverage": "yarn test --no-cache --runInBand --coverage",
     "storybook": "lerna exec --scope earlybird-app yarn storybook",
-    "start": "lerna exec --scope earlybird-app yarn start:watch",
-    "publish": "scripts/publish.sh"
+    "start": "lerna exec --scope earlybird-app yarn start:watch"
   },
   "devDependencies": {
     "@storybook/addon-centered": "^3.3.13",
