@@ -1,3 +1,5 @@
 export default function getUsers() {
-  return []
+  return new Promise((resolve) => {
+    resolve([])
+  })
 }

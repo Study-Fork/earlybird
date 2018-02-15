@@ -15,7 +15,7 @@
     "build": "npm-run-all clean build:*",
     "start": "react-scripts start",
     "start:watch": "npm-run-all -p watch:css start",
-    "test": "jest",
+    "test": "react-scripts test --env=jsdom",
     "coverage": "yarn test -- --no-cache --runInBand --coverage",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 9001 -c .storybook"
