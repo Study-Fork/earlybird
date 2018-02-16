@@ -27,7 +27,7 @@
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-facebook-login": "^4.0.0",
-    "react-tag-input": "^4.7.3"
+    "react-tagsinput": "^3.19.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { WithContext as ReactTags } from 'react-tag-input'
+import TagsInput from 'react-tagsinput'
 import { Status } from 'earlybird-domain'
 import './Clock.scss'
 
@@ -8,12 +8,10 @@ class Clock extends Component {
     super(props)
     this.state = {
       date: new Date(),
-      status: Status.READY,
       tags: [],
-      suggestions: ['요가', '웨이트'],
+      status: Status.READY,
     }
-    this.handleAdditionTag = this.handleAdditionTag.bind(this)
-    this.handleDeleteTag = this.handleDeleteTag.bind(this)
+    this.handleChangeTags = this.handleChangeTags.bind(this)
     this.handleClickBtn = this.handleClickBtn.bind(this)
   }
 
@@ -31,23 +29,8 @@ class Clock extends Component {
     })
   }
 
-  handleAdditionTag(tag) {
-    this.setState((prevState) => {
-      const { tags } = prevState
-      tags.push({
-        id: tags.length + 1,
-        text: tag,
-      })
-      return { tags }
-    })
-  }
-
-  handleDeleteTag(i) {
-    this.setState((prevState) => {
-      const { tags } = prevState
-      tags.splice(i, 1)
-      return { tags }
-    })
+  handleChangeTags(tags) {
+    this.setState({ tags })
   }
 
   handleClickBtn() {
@@ -58,21 +41,17 @@ class Clock extends Component {
   }
 
   render() {
-    const { tags, suggestions } = this.state
-    const autofocusTags = true
+    const { tags } = this.state
+    const inputProps = {
+      className: 'react-tagsinput-input',
+      placeholder: 'To do',
+    }
     return (
       <div className="clock-area">
         <div className="clock">
           {this.state.date.toLocaleTimeString('ko-KR')}
         </div>
-        <ReactTags
-          tags={tags}
-          suggestions={suggestions}
-          handleAddition={this.handleAdditionTag}
-          handleDelete={this.handleDeleteTag}
-          autofocus={autofocusTags}
-          placeholder="Add new one to do"
-        />
+        <TagsInput value={tags} onChange={this.handleChangeTags} inputProps={inputProps} />
         <button className="btn btn-success btn-lg btn-block" onClick={this.handleClickBtn}>
           {this.state.status}
         </button>

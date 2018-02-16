@@ -10,57 +10,54 @@
   .btn-lg {
     font-size: 20px;
   }
-}
 
-.ReactTags__tags {
-  position: relative;
-}
-
-.ReactTags__tagInput {
-  width: 200px;
-  border-radius: 2px;
-  display: inline-block;
-  .ReactTags__tagInputField, 
-  .ReactTags__tagInputField:focus {
-    height: 31px;
-    margin: 0;
-    font-size: 12px;
-    width: 100%;
-    border: 1px solid #eee;
+  .react-tagsinput {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    margin-bottom: 10px;
+    padding-left: 5px;
+    padding-top: 5px;
   }
-}
-
-.ReactTags__selected span.ReactTags__tag {
-  border: 1px solid #ddd;
-  background: #eee;
-  font-size: 12px;
-  display: inline-block;
-  padding: 5px;
-  margin: 0 5px;
-  cursor: move;
-  border-radius: 2px;
-  a.ReactTags__remove {
-    color: #aaa;
-    margin-left: 5px;
+  
+  .react-tagsinput--focused {
+    border-color: #a5d24a;
+  }
+  
+  .react-tagsinput-tag {
+    background-color: #cde69c;
+    border-radius: 2px;
+    border: 1px solid #a5d24a;
+    color: #638421;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    padding: 5px;
+  }
+  
+  .react-tagsinput-remove {
     cursor: pointer;
+    font-weight: bold;
   }
-}
-
-.ReactTags__suggestions {
-  position: absolute;
-  ul {
-    list-style-type: none;
-    box-shadow: .05em .01em .5em rgba(0,0,0,.2);
-    background: white;
-    width: 200px;
-    li.ReactTags__activeSuggestion {
-      background: #b7cfe0;
-      cursor: pointer;
-    }
+  
+  .react-tagsinput-tag a::before {
+    content: " ×";
   }
-  li {
-    border-bottom: 1px solid #ddd;
-    padding: 5px 10px;
-    margin: 0;
+  
+  .react-tagsinput-input {
+    background: transparent;
+    border: 0;
+    color: #777;
+    font-family: sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 6px;
+    margin-top: 1px;
+    outline: none;
+    padding: 5px;
+    width: 80px;
   }
 }
