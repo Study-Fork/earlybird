@@ -1,21 +1,11 @@
 import React, { Component } from 'react'
-import Chart from '../../components/Chart/Chart'
+import Clock from '../../components/Clock'
 
 class Main extends Component {
   render() {
     return (
       <main className="content">
-        <div className="row">
-          <div className="col-sm">
-            <Chart name="daily" />
-          </div>
-          <div className="col-sm">
-            <Chart name="weekly" />
-          </div>
-          <div className="col-sm">
-            <Chart name="monthly" />
-          </div>
-        </div>
+        <Clock />
       </main>
     )
   }
