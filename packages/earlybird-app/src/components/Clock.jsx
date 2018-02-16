@@ -48,12 +48,9 @@ class Clock extends Component {
     }
     return (
       <div className="clock-area">
-        <div className="clock">
-          {this.state.date.toLocaleTimeString('ko-KR')}
-        </div>
         <TagsInput value={tags} onChange={this.handleChangeTags} inputProps={inputProps} />
         <button className="btn btn-success btn-lg btn-block" onClick={this.handleClickBtn}>
-          {this.state.status}
+          {this.state.date.toLocaleTimeString('ko-KR')} {this.state.status}
         </button>
       </div>
     )
