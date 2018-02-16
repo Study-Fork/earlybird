@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import './Clock.scss'
 
 const Status = Object.freeze({
-  READY: 'Start!',
-  STARTED: 'That\'s enough for today',
+  READY: '오늘의 일과 시작!',
+  STARTED: '오늘은 이 정도면 충분',
   FINISHED: 'Have a good day :D',
 })
 
@@ -42,9 +42,9 @@ class Clock extends Component {
     return (
       <div className="clock-area">
         <div className="clock">
-          {this.state.date.toLocaleTimeString()}
+          {this.state.date.toLocaleTimeString('ko-KR')}
         </div>
-        <button className="btn btn-primary btn-lg btn-block" onClick={this.handleClick}>
+        <button className="btn btn-success btn-lg btn-block" onClick={this.handleClick}>
           {this.state.status}
         </button>
       </div>
