@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
 import './Clock.scss'
 
+const Status = Object.freeze({
+  READY: 'Start!',
+  STARTED: 'That\'s enough for today',
+  FINISHED: 'Have a good day :D',
+})
+
 class Clock extends Component {
   constructor(props) {
     super(props)
-    this.state = { date: new Date(), isToggleOn: true }
+    this.state = {
+      date: new Date(),
+      status: Status.READY,
+    }
     this.handleClick = this.handleClick.bind(this)
   }
 
@@ -23,8 +32,9 @@ class Clock extends Component {
   }
 
   handleClick() {
+    const next = this.state.status === Status.STARTED ? Status.FINISHED : Status.READY
     this.setState(prevState => ({
-      isToggleOn: !prevState.isToggleOn,
+      status: prevState.status === Status.READY ? Status.STARTED : next,
     }))
   }
 
@@ -35,7 +45,7 @@ class Clock extends Component {
           {this.state.date.toLocaleTimeString()}
         </div>
         <button className="btn btn-primary btn-lg btn-block" onClick={this.handleClick}>
-          {this.state.isToggleOn ? 'START' : 'FINISH'}
+          {this.state.status}
         </button>
       </div>
     )
