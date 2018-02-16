@@ -1,7 +1,18 @@
 @charset "utf-8";
 
 .header {
-	height: 45px;
 	width: 100%;
-	background-color: #2d3539;
+	.navigation {
+		height: 70px;
+		background-color: #ffffff;
+		border-bottom: 1px solid rgba(0,0,0,.125);
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+		padding: 0px 20px;
+	}
+}
+
+.fab {
+	color: rgba(0,0,0,.752);
 }
