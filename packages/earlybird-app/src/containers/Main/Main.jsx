@@ -1,18 +1,19 @@
 import React, { Component } from 'react'
+import Chart from '../../components/Chart/Chart'
 
 class Main extends Component {
   render() {
     return (
-      <main className="container">
+      <main className="content">
         <div className="row">
           <div className="col-sm">
-            One of three columnsal
+            <Chart name="daily" />
           </div>
           <div className="col-sm">
-            One of three columnsal
+            <Chart name="weekly" />
           </div>
           <div className="col-sm">
-            One of three columns
+            <Chart name="monthly" />
           </div>
         </div>
       </main>
