@@ -26,7 +26,8 @@
     "earlybird-integration": "^0.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-facebook-login": "^4.0.0"
+    "react-facebook-login": "^4.0.0",
+    "react-tag-input": "^4.7.3"
   },
   "devDependencies": {
     "gulp": "^3.9.1",

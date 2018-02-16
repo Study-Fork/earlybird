@@ -25,7 +25,7 @@ class Header extends Component {
     return (
       <header className="header">
         <nav className="navigation">
-          <i className="fab fa-angellist fa-3x" />
+          <i className="fab fa-angellist fa-2x" />
           <div className="navigation-links">
             {this.state.isLogin ? (
               <div>{this.state.name}</div>
