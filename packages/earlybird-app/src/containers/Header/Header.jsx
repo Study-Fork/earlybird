@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import FacebookLogin from 'react-facebook-login'
 
 class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      appId: '736580453211456',
-      fields: 'name,email,picture',
-      scope: 'email,public_profile,publish_actions',
+      appId: '274190349421332',
+      fields: 'name,picture',
+      scope: 'public_profile,publish_actions,user_managed_groups',
       autoLoad: true,
       isLogin: false,
     }
@@ -19,6 +20,7 @@ class Header extends Component {
       ...response,
       isLogin: !!response.accessToken,
     })
+    this.props.onLogin(response)
   }
 
   render() {
@@ -47,6 +49,10 @@ class Header extends Component {
       </header>
     )
   }
+}
+
+Header.propTypes = {
+  onLogin: PropTypes.func.isRequired,
 }
 
 export default Header

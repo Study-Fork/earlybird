@@ -1,6 +1,6 @@
 import fetch from 'isomorphic-fetch'
 
-const graphAddress = 'https://graph.facebook.com/v2.8'
+const graphAddress = 'https://graph.facebook.com/v2.11'
 
 export function createQuery(parameters) {
   return Object.keys(parameters).map(key => `${key}=${parameters[key]}`).join('&')

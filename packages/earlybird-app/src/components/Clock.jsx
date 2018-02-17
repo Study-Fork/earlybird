@@ -44,7 +44,7 @@ class Clock extends Component {
     const { tags } = this.state
     const inputProps = {
       className: 'react-tagsinput-input',
-      placeholder: 'To do',
+      placeholder: 'TO DO',
     }
     return (
       <div className="clock-area">
