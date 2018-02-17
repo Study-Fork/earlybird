@@ -3,7 +3,7 @@
 
 ## Facebook Graph API Explorer
 
- - https://developers.facebook.com/tools/explorer/145634995501895/?method=POST&path=688419537976752%2Ffeed&version=v2.8
+ - https://developers.facebook.com/tools/explorer/145634995501895/?method=POST&path=688419537976752%2Ffeed&version=v2.11
 
 ## Authorizations and Login response
 
@@ -58,11 +58,11 @@ Group Id | Description
 ---|---
 688419537976752 | earlybird
 652912804915355 | holaxprogramming
-381481332245943 | remote work
+381481332245943 | remotework
 
 > https://lookup-id.com/#
 
-## REST APIs 
+## REST APIs
 
 ### Publish Feed
 
@@ -91,19 +91,4 @@ Parameter | Description
 ---|---
 accessToken | accessToken
 fields | comments{comments{message},message},message
-
-<br/>
-
-### Publish Comment
-
-```
-POST https://graph.facebook.com/v2.8/:object_id/comments
-```
-
-#### Parameters
-
-Parameter | Description
----|---
-accessToken | accessToken
-message | message
 

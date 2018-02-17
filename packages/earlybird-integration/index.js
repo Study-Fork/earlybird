@@ -1,19 +1,26 @@
 import fetch from 'isomorphic-fetch'
 
-const graphAddress = 'https://graph.facebook.com/v2.8'
+const graphAddress = 'https://graph.facebook.com/v2.11'
 
 export function createQuery(parameters) {
   return Object.keys(parameters).map(key => `${key}=${parameters[key]}`).join('&')
 }
 
 export default function graph(request) {
-  const { method, headers, body } = request
+  const {
+    accessToken,
+    method,
+    headers,
+    body,
+  } = request
   const options = {
     method,
     headers,
     body,
   }
-  const url = graphAddress.concat(request.url).concat(method === 'GET' ? `?${createQuery(body)}` : '')
+  const url = graphAddress
+    .concat(request.url)
+    .concat(method === 'GET' ? `?${createQuery(Object.assign({}, body, { access_token: accessToken }))}` : '')
   return fetch(url, options)
     .then((response) => {
       if (response.status >= 400) {
