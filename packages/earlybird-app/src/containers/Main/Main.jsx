@@ -10,7 +10,7 @@ class Main extends Component {
     const latestFeed = feeds.find(feed => feed.message.includes('ROUND'))
     return (
       <main className="content">
-        <Today message={latestFeed.message} />
+        <Today todayFeed={latestFeed} />
         <Clock />
         <Dashboard />
       </main>

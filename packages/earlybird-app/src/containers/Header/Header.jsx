@@ -16,11 +16,11 @@ class Header extends Component {
   }
 
   responseFacebook(response) {
+    this.props.onLogin(response)
     this.setState({
       ...response,
       isLogin: !!response.accessToken,
     })
-    this.props.onLogin(response)
   }
 
   render() {

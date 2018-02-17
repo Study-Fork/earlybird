@@ -16,7 +16,7 @@ export default function graph(request) {
   const options = {
     method,
     headers,
-    body,
+    body: method !== 'GET' ? body : undefined,
   }
   const url = graphAddress
     .concat(request.url)
@@ -29,5 +29,4 @@ export default function graph(request) {
       return response.json()
     })
     .then(json => json.data)
-    .catch(error => error)
 }
