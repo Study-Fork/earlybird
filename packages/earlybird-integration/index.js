@@ -16,8 +16,9 @@ export default function graph(request) {
   const options = {
     method,
     headers,
-    body: method !== 'GET' ? body : undefined,
+    body,
   }
+  if (method === 'GET') delete options.body
   const url = graphAddress
     .concat(request.url)
     .concat(method === 'GET' ? `?${createQuery(Object.assign({}, body, { access_token: accessToken }))}` : '')
