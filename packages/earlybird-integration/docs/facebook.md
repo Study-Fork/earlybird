@@ -92,18 +92,3 @@ Parameter | Description
 accessToken | accessToken
 fields | comments{comments{message},message},message
 
-<br/>
-
-### Publish Comment
-
-```
-POST https://graph.facebook.com/v2.8/:object_id/comments
-```
-
-#### Parameters
-
-Parameter | Description
----|---
-accessToken | accessToken
-message | message
-

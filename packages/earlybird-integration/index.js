@@ -7,13 +7,20 @@ export function createQuery(parameters) {
 }
 
 export default function graph(request) {
-  const { method, headers, body } = request
+  const {
+    accessToken,
+    method,
+    headers,
+    body,
+  } = request
   const options = {
     method,
     headers,
     body,
   }
-  const url = graphAddress.concat(request.url).concat(method === 'GET' ? `?${createQuery(body)}` : '')
+  const url = graphAddress
+    .concat(request.url)
+    .concat(method === 'GET' ? `?${createQuery(Object.assign({}, body, { access_token: accessToken }))}` : '')
   return fetch(url, options)
     .then((response) => {
       if (response.status >= 400) {

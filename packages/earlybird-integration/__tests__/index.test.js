@@ -11,16 +11,30 @@ describe('Create Query String Parameters', () => {
 })
 
 describe('Facbook Graph API', () => {
+  let feeds = []
   test('Get group feeds', async () => {
     const { fields } = parameters
-    const feeds = await graph({
+    const res = await graph({
+      accessToken: ACCESS_TOKEN,
       method: 'GET',
       url: `/${GROUP_ID}/feed`,
       body: {
-        access_token: ACCESS_TOKEN,
         fields,
       },
     })
-    expect(Array.isArray(feeds)).toBeTruthy()
+    feeds = [...res]
+    expect(Array.isArray(res)).toBeTruthy()
+  })
+
+  test('Get comments', async () => {
+    const res = await graph({
+      accessToken: ACCESS_TOKEN,
+      method: 'GET',
+      url: `/${feeds[0].id}/comments`,
+      body: {
+        fields: 'from,can_comment,id,message',
+      },
+    })
+    expect(Array.isArray(res)).toBeTruthy()
   })
 })
