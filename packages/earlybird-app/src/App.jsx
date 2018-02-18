@@ -11,6 +11,7 @@ class App extends Component {
     super(props)
     this.state = {
       groupId: constants.groupId,
+      user: {},
       feeds: [],
     }
     this.onLogin = this.onLogin.bind(this)
@@ -22,11 +23,12 @@ class App extends Component {
       url: `/${this.state.groupId}/feed`,
       body: {
         access_token: response.accessToken,
-        fields: 'message,comments{comments{message},message}',
+        fields: 'message,comments{comments{message,from},message,from}',
       },
     })
     this.setState({
       feeds: [...feeds],
+      user: response,
     })
   }
 
@@ -35,7 +37,7 @@ class App extends Component {
       <div className="container">
         <Header onLogin={this.onLogin} />
         {this.state.feeds.length > 0 &&
-          <Main feeds={this.state.feeds} />
+          <Main user={this.state.user} feeds={this.state.feeds} />
         }
         <Footer />
       </div>

@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import TagsInput from 'react-tagsinput'
 import { Status } from 'earlybird-domain'
-import './Clock.scss'
 
 class Clock extends Component {
   constructor(props) {
     super(props)
+    const tags = localStorage.getItem('tags')
     this.state = {
       date: new Date(),
-      tags: [],
+      tags: tags ? tags.split(',') : [],
       status: Status.READY,
     }
     this.handleChangeTags = this.handleChangeTags.bind(this)
@@ -30,6 +30,7 @@ class Clock extends Component {
   }
 
   handleChangeTags(tags) {
+    localStorage.setItem('tags', tags)
     this.setState({ tags })
   }
 
@@ -44,13 +45,13 @@ class Clock extends Component {
     const { tags } = this.state
     const inputProps = {
       className: 'react-tagsinput-input',
-      placeholder: 'TO DO',
+      placeholder: 'Enter Todo',
     }
     return (
       <div className="clock-area">
         <TagsInput value={tags} onChange={this.handleChangeTags} inputProps={inputProps} />
-        <button className="btn btn-success btn-lg btn-block" onClick={this.handleClickBtn}>
-          {this.state.date.toLocaleTimeString('ko-KR')} {this.state.status}
+        <button className="btn btn-success btn-lg btn-block" onClick={this.handleClickBtn} disabled={this.state.status === Status.FINISHED}>
+          {this.state.status !== Status.FINISHED && this.state.date.toLocaleTimeString('ko-KR')}  {this.state.status}
         </button>
       </div>
     )

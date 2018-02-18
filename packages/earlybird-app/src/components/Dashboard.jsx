@@ -1,24 +1,22 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import Participant from './Participant'
 
 class Dashboard extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      participants: [
-        { name: '정민혁', checkedCount: 10 },
-        { name: '홍길동', checkedCount: 5 },
-      ],
-    }
-  }
   render() {
+    const { todayComments } = this.props
     return (
       <ul className="list-group">
-        <Participant participant={this.state.participants[0]} />
-        <Participant participant={this.state.participants[1]} />
+        {todayComments.map((item, index) => (
+          <Participant participant={item} key={index} />
+        ))}
       </ul>
     )
   }
+}
+
+Dashboard.propTypes = {
+  todayComments: PropTypes.array.isRequired,
 }
 
 export default Dashboard
