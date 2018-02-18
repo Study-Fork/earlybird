@@ -56,4 +56,19 @@ describe('Facbook Graph API', () => {
     })
     expect(Array.isArray(res)).toBeTruthy()
   })
+
+  test('Should be bad request when post a comment', () => {
+    expect(feeds.length > 0).toBeTruthy()
+    expect.hasAssertions()
+    return graph({
+      method: 'POST',
+      url: `/${feeds[0].id}/comments`,
+      body: {
+        access_token: accessToken,
+        message: 'This is test message',
+      },
+    }).catch((err) => {
+      expect(err).toBeTruthy()
+    })
+  })
 })

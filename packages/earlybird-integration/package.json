@@ -1,12 +1,16 @@
 {
   "name": "earlybird-integration",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "./dist/index",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "babel index.js -d dist --presets env"
   },
   "dependencies": {
     "isomorphic-fetch": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
   },
   "engines": {
     "node": ">=8.9.0"

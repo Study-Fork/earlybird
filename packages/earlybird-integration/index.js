@@ -22,9 +22,10 @@ export default function graph(request) {
       if (response.status >= 400) {
         const _headers = JSON.stringify(response.headers._headers, null, 2)
         const _body = response.text()
-        throw new Error(`${_headers} ${_body}`)
+        throw new Error(`${response.status} ${response.url} ${_headers} ${_body}`)
       }
       return response.json()
     })
     .then(json => json.data || json)
+    .catch(error => error)
 }

@@ -7,6 +7,7 @@
     "lint": "lerna exec yarn lint",
     "lint:report": "lerna exec yarn lint:report",
     "build": "lerna exec yarn build --scope earlybird-app",
+    "build:integration": "lerna exec yarn build --scope earlybird-integration",
     "test": "jest",
     "test:integration": "lerna exec jest --scope earlybird-integration",
     "coverage": "yarn test --no-cache --runInBand --coverage",

@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import FacebookLogin from 'react-facebook-login'
+import constants from '../../constants'
 
 class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      appId: '274190349421332',
+      appId: constants.appId,
       fields: 'name,picture',
       scope: 'public_profile,publish_actions,user_managed_groups',
       autoLoad: true,
