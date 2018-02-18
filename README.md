@@ -99,3 +99,13 @@ yarn
 yarn lint:report
 yarn coverage
 ```
+
+## License
+
+```
+The YOLO License (YOLO)
+
+Copyright (c) 2017 Minhyeok Jung
+
+Life is wonderful, You Only Live Once!
+```
