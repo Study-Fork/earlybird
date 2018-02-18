@@ -5,6 +5,14 @@ import Today from '../../components/Today'
 import Clock from '../../components/Clock'
 import Dashboard from '../../components/Dashboard'
 import History from '../../components/History'
+import Description from '../../components/Description'
+
+const TabMenu = Object.freeze({
+  TODAY: '오늘의 얼또',
+  HISTORY: '지난 얼또',
+  MY: '내 정보',
+  HONOR: '명예의 전당',
+})
 
 class Main extends Component {
   render() {
@@ -15,9 +23,10 @@ class Main extends Component {
       <main className="content">
         <Tabs>
           <TabList>
-            <Tab><b>TODAY</b></Tab>
-            <Tab><b>HISTORY</b></Tab>
-            <Tab><b>MY</b></Tab>
+            <Tab><b>{TabMenu.TODAY}</b></Tab>
+            <Tab><b>{TabMenu.HISTORY}</b></Tab>
+            <Tab><b>{TabMenu.MY}</b></Tab>
+            <Tab><b>{TabMenu.HONOR}</b></Tab>
           </TabList>
           <TabPanel>
             <Today todayFeed={latestFeed} />
@@ -28,17 +37,10 @@ class Main extends Component {
             <History user={user} feeds={feeds} />
           </TabPanel>
           <TabPanel>
-            <div className="my-area">
-              <div className="card">
-                <img className="card-img-top" src="http://image.toast.com/aaaaahq/earlybird.png" alt="ready" />
-                <div className="card-body">
-                  <p className="card-text">
-                    <span>준비 중입니다. 이 서비스에 많은 피드백을 부탁드려요!<br /></span>
-                    <span><a href="https://github.com/stunstunstun/earlybird/issues" target="blank">https://github.com/stunstunstun/earlybird/issues</a></span>
-                  </p>
-                </div>
-              </div>
-            </div>
+            <Description />
+          </TabPanel>
+          <TabPanel>
+            <Description />
           </TabPanel>
         </Tabs>
       </main>

@@ -62,6 +62,15 @@ $ yarn test
 $ yarn start
 ```
 
+#### Configure hosts
+
+Hosts must be registered in development, because of Facebook API policie.
+
+`/etc/hosts`
+```
+127.0.0.1 dev.earlybird.live:3000
+```
+
 ### Interactive UI component dev & test
 
 ```
