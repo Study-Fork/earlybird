@@ -4,9 +4,15 @@ import PropTypes from 'prop-types'
 class Today extends Component {
   render() {
     const { todayFeed } = this.props
+    const { message } = todayFeed
     return (
       <div className="card card-body">
-        {todayFeed.message}
+        {message.split('\n').map((item, index) => (
+          <span key={index}>
+            {item}
+            <br />
+          </span>
+        ))}
       </div>
     )
   }

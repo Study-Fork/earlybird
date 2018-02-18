@@ -22,12 +22,12 @@
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
-    "earlybird-domain": "^0.1.0",
-    "earlybird-integration": "^0.1.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-facebook-login": "^4.0.0",
-    "react-tagsinput": "^3.19.0"
+    "react-tagsinput": "^3.19.0",
+    "earlybird-domain": "^0.1.0",
+    "earlybird-integration": "^0.1.0"
   },
   "devDependencies": {
     "gulp": "^3.9.1",
