@@ -23,7 +23,7 @@ class App extends Component {
       url: `/${this.state.groupId}/feed`,
       body: {
         access_token: response.accessToken,
-        fields: 'message,comments{comments{message,from},message,from}',
+        fields: 'message,comments{comments{message,from},message,from{id,name,picture}}',
       },
     })
     this.setState({

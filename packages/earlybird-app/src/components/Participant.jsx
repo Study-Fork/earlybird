@@ -6,10 +6,15 @@ const prefix = '시작'
 class Participant extends Component {
   render() {
     const { participant } = this.props
+    const { message, from } = participant
+    const profileURL = from.picture.data.url
     return (
       <li className="list-group-item d-flex justify-content-between align-items-center">
-        {participant.message.replace(`[${prefix}]`, '').replace(prefix, '')}
-        <span>{participant.comments && <i className="fas fa-check" />}</span>
+        <span><img className="profile" src={profileURL} alt="profile" /></span>
+        <span className="message">
+          {message.replace(`[${prefix}]`, '').replace(prefix, '')}
+        </span>
+        <span className="done">{participant.comments && <i className="fas fa-check" />}</span>
       </li>
     )
   }
