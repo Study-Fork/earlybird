@@ -7,12 +7,7 @@ export function createQuery(parameters) {
 }
 
 export default function graph(request) {
-  const {
-    accessToken,
-    method,
-    headers,
-    body,
-  } = request
+  const { method, headers, body } = request
   const options = {
     method,
     headers,
@@ -21,13 +16,15 @@ export default function graph(request) {
   if (method === 'GET') delete options.body
   const url = graphAddress
     .concat(request.url)
-    .concat(method === 'GET' ? `?${createQuery(Object.assign({}, body, { access_token: accessToken }))}` : '')
+    .concat(method === 'GET' ? `?${createQuery(Object.assign({}, body))}` : '')
   return fetch(url, options)
     .then((response) => {
       if (response.status >= 400) {
-        throw new Error(`HTTP status ${response.status} ${response.statusText}`)
+        const _headers = JSON.stringify(response.headers._headers, null, 2)
+        const _body = response.text()
+        throw new Error(`${_headers} ${_body}`)
       }
       return response.json()
     })
-    .then(json => json.data)
+    .then(json => json.data || json)
 }

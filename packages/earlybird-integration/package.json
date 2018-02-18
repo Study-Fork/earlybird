@@ -5,12 +5,12 @@
   "scripts": {
     "test": "jest"
   },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1"
+  },
   "engines": {
     "node": ">=8.9.0"
   },
   "author": "stunstunstun",
-  "license": "MIT",
-  "dependencies": {
-    "isomorphic-fetch": "^2.2.1"
-  }
+  "license": "MIT"
 }
