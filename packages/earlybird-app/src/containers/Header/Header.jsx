@@ -28,7 +28,7 @@ class Header extends Component {
     return (
       <header className="header">
         <nav className="navigation">
-          <i className="fab fa-angellist fa-2x" />
+          <a href="https://www.facebook.com/groups/earlyddorai" target="blank"><img src="http://image.toast.com/aaaaahq/earlybird_50x50.png" alt="logo" /></a>
           <div className="navigation-links">
             {this.state.isLogin ? (
               <div>{this.state.name}</div>

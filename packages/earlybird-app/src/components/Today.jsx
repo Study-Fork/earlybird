@@ -6,7 +6,7 @@ class Today extends Component {
     const { todayFeed } = this.props
     const { message } = todayFeed
     return (
-      <div className="card card-body">
+      <div className="card">
         {message.split('\n').map((item, index) => (
           <span key={index}>
             {item}

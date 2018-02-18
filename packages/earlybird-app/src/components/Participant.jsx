@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
+const prefix = '시작'
+
 class Participant extends Component {
   render() {
     const { participant } = this.props
     return (
       <li className="list-group-item d-flex justify-content-between align-items-center">
-        {participant.name}
-        <span className="badge badge-primary badge-pill">{participant.checkedCount}</span>
+        {participant.message.replace(`[${prefix}]`, '').replace(prefix, '')}
+        <span>{participant.comments && <i className="fas fa-check" />}</span>
       </li>
     )
   }

@@ -4,6 +4,6 @@ export const Status = Object.freeze({
   FINISHED: 'Have a good day :D',
 })
 
-const appName = 'earlybird'
-
-export default appName
+export default function getHistory(user, feeds) {
+  return feeds.filter(feed => feed.message.includes('ROUND'))
+}
