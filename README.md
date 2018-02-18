@@ -62,6 +62,15 @@ $ yarn test
 $ yarn start
 ```
 
+#### Configure hosts
+
+Hosts must be registered in development, because of Facebook API policie.
+
+`/etc/hosts`
+```
+127.0.0.1 dev.earlybird.live:3000
+```
+
 ### Interactive UI component dev & test
 
 ```
@@ -72,17 +81,9 @@ $ yarn storybook
 
 ```bash
 $ yarn build
-yarn run v1.3.2
-$ lerna exec yarn build --scope earlybird-app
-lerna info version 2.8.0
-lerna info scope earlybird-app
-$ npm-run-all clean build:*
-$ rm -rf eslint build .cache checkstyle*.xml
-$ node-sass-chokidar src/App.scss -o src
-Rendering Complete, saving .css file...
-Wrote CSS to /Users/jungminhyuck/Github/earlybird/packages/earlybird-app/src/App.css
-$ react-scripts build
+...
 Creating an optimized production build...
+$ cd packages/earlybird-app/build
 ```
 
 ## Integration with CI
@@ -98,4 +99,14 @@ nvm use
 yarn
 yarn lint:report
 yarn coverage
+```
+
+## License
+
+```
+The YOLO License (YOLO)
+
+Copyright (c) 2017 Minhyeok Jung
+
+Life is wonderful, You Only Live Once!
 ```
